@@ -1,0 +1,9 @@
+body {
+    background-color: #594;
+    transform: rotate(45deg);
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}

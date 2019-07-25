@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<script>
+		// //原型链继承
+		// function Animal(name) {
+		// 	this.name = name 
+		// }
+
+		// function Cat () {
+		// 	this.type = 'cat'
+		// }
+		// Animal.prototype.eat = function() {
+		// 	console.log(3333)
+		// }
+
+		// Cat.prototype = new Animal()
+		// Cat.prototype.constructor = Cat
+
+		// var cat1 = new Cat('tom')
+		// console.log(cat1.eat)
+
+
+		// //构造函数继承
+
+		// function Animal(name) {
+		// 	this.name = name
+		// }
+
+		// function Cat(name) {
+		// 	Animal.apply(this, arguments)
+		// 	this.type = '这是一只猫'
+		// }
+
+		// var cat1 = new Cat('jake')
+		// console.log(cat1)
+
+
+		// 拷贝继承
+
+	// Object.create({}) 跟 {} 创建出来的对象有什么区别
+	var a = Object.create(null)
+	var b = {}
+			console.log(a.toString)
+			console.log(b.toString)
+		// console.log(a === b)
+	</script>
+	}
+	
+</body>
+</html>
+

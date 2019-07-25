@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var HeadClass = function () { };
+
+
+        // var Head = (function () { // 匿名自执行函数
+        //     var instance; // 声明一个instance对象
+        //     return function () {
+        //         if (instance) { // 如果已存在 则返回instance
+        //             return instance;
+        //         }
+        //         instance = new HeadClass() // 如果不存在 则new一个HeadClass对象
+        //         return instance;
+        //     }
+        // })();
+        // var a = new Head();
+        // var b = new Head();
+        // console.log(a===b) // true
+
+
+            // function Person(name) {
+            //   if(Person.instance) {
+            //       return Person.instance
+            //   } else {
+            //       this.name = name
+            //       Person.instance = this 
+            //       return this
+            //   }
+            // }
+
+            // var t = new Person('jake')
+            // console.log(t)
+            // var b = new Person('lucy')
+            // console.log(b)
+
+
+            function Person1(name) {
+                this.name = name
+            }
+
+
+            var t = (function getInstance() {
+                var instance = null
+                console.log(instance)
+                return function(name) {
+                   
+                    if(!instance) {
+                        instance =  new Person1(name)
+                        console.log(instance)
+                    }
+                    return instance
+                } 
+            })()
+
+
+            var p1 = t('jake')
+            console.log(p1)
+            var p2 = t('lucy')
+            console.log(p2)
+
+
+           
+        
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            name: 'jake'
+        }
+
+        // 绑定this, 返回一个函数, 参数优先设置
+
+
+        Function.prototype.bind1 = function(field) {
+            //拿到原函数指针
+            console.log(this)
+            
+
+            var func1 = this
+            //that暂存原函数指针
+            var that = this
+
+            // 拿到入参
+            console.log(arguments)
+
+            console.log(arguments[0])
+            // this = arguments[0]
+
+            var newArgum = Array.prototype.slice.call(arguments,1)
+            console.log(newArgum)
+            console.log(that)
+            console.log(field)
+            
+            return function() {
+                return that.apply(that, newArgum)
+            }
+
+        }
+
+        var t = function() {
+            console.log(3)
+        }
+
+       var pp =  t.bind1(obj,2,3,4)
+
+       console.log(pp)
+        
+        
+    </script>
+    
+</body>
+</html>
